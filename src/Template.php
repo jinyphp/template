@@ -11,7 +11,7 @@ class Template
 
     public function __construct($view)
     {
-        echo __CLASS__."객체를 생성합니다.<br>";
+        //echo __CLASS__."객체를 생성합니다.<br>";
         $this->View = $view;
         $this->View->_body = $this->template($this->View->_body);
     }
@@ -19,7 +19,7 @@ class Template
     // 템플릿을 처리합니다.
     public function template($body)
     {
-        echo __METHOD__."를 호출합니다.<br>";
+        //echo __METHOD__."를 호출합니다.<br>";
 
         // echo "<pre>";
         // print_r($this->View->_data);
@@ -27,8 +27,8 @@ class Template
 
         switch ($this->isEngine()) {
             case 'Liquid':
-                echo "Liquid를 적용합니다.<br>";
-                $this->Liquid = new \Jiny\Core\Views\Liquid($this->View);
+                //echo "Liquid를 적용합니다.<br>";
+                $this->Liquid = new \Jiny\Template\Liquid($this->View);
                 
                 return $this->Liquid->Liquid(
                     $body, 
