@@ -19,7 +19,7 @@ class Template
     // 템플릿을 처리합니다.
     public function template($body)
     {
-        //echo __METHOD__."를 호출합니다.<br>";
+        // echo __METHOD__."를 호출합니다.<br>";
 
         // echo "<pre>";
         // print_r($this->View->_data);

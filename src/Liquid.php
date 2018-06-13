@@ -20,7 +20,7 @@ class Liquid
     public function Liquid($body, $data)
     {
         //echo __METHOD__."<br>";
-        //echo "Liquid 템플릿을 처리합니다.<br>";
+        // echo "Liquid 템플릿을 처리합니다.<br>";
         $this->$Liquid->parse($body);
 
         //echo "<pre>";
