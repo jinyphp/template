@@ -10,18 +10,28 @@ class Liquid
 
     public function __construct($view)
     {
-        //echo __CLASS__."객체를 생성합니다.<br>";
+        // \TimeLog::set(__CLASS__."가 생성이 되었습니다.");
+
+        // 의존성 주입
+        // View 클래스의 인스턴스르 저장합니다.
         $this->View = $view;
 
-
-        //$path = __DIR__;
-        //echo $path;
-        $this->Liquid = new \Liquid\Template();
+        // 패티지 liquid/liquid
+        // 인스턴스를 생성합니다.
+        // $path = $this->View->Controller->Application->Config->data("ENV.path.view");
+        $path = ROOTPATH.Registry::get("CONFIG")->data("ENV.path.view");
+        $path = str_replace("/",DS,$path);
+        // echo $path ."<br>";
+        
+        \Liquid\Liquid::set('INCLUDE_ALLOW_EXT', true);
+        $this->Liquid = new \Liquid\Template($path);
+        // $this->Liquid->setCache(new Local());
     }
 
     public function Liquid($body, $data)
     {
-        //echo __METHOD__."<br>";
+        // \TimeLog::set(__METHOD__);
+        
         // 코드를 추출합니다.
         $this->Liquid->parse($body);
 
