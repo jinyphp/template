@@ -1,5 +1,5 @@
 <?php
-namespace Jiny\Template;
+namespace Jiny\Template\Adapter;
 
 use \Jiny\Core\Registry\Registry;
 
@@ -19,15 +19,18 @@ class Liquid
         // 패티지 liquid/liquid
         // 인스턴스를 생성합니다.
         // $path = $this->View->Controller->Application->Config->data("ENV.path.view");
-        $path = ROOTPATH.Registry::get("CONFIG")->data("ENV.path.view");
+        $path = ROOTPATH.Registry::get("CONFIG")->data("ENV.path.pages");
         $path = str_replace("/",DS,$path);
-        // echo $path ."<br>";
+        //echo $path ."<br>";
         
         \Liquid\Liquid::set('INCLUDE_ALLOW_EXT', true);
         $this->Liquid = new \Liquid\Template($path);
         // $this->Liquid->setCache(new Local());
     }
 
+    /**
+     * Liquid 랜더링을 처리합니다.
+     */
     public function Liquid($body, $data)
     {
         // \TimeLog::set(__METHOD__);
@@ -38,4 +41,5 @@ class Liquid
         // 추출한 코드에 데이터를 처리합니다.
         return $this->Liquid->render($data);
     }
+
 }
