@@ -1,4 +1,12 @@
 <?php
+/*
+ * This file is part of the jinyPHP package.
+ *
+ * (c) hojinlee <infohojin@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace Jiny\Template\Carpet;
 
 use \Jiny\Core\Registry\Registry;
@@ -10,6 +18,9 @@ class Carpet
     const PREFIX_START = "{(";
     const PREFIX_END = ")}";
 
+    /**
+     * 
+     */
     public function __construct()
     {
         //echo "카페트 엔진 적용<br>";
@@ -17,6 +28,9 @@ class Carpet
         $this->setPreEnd(self::PREFIX_END);
     }
 
+    /**
+     * 
+     */
     public function parser($body)
     {
         if($codes = $this->preFixs($body)){
@@ -26,6 +40,9 @@ class Carpet
         }        
     }
 
+    /**
+     * 
+     */
     public function render($codes, $body)
     {
         foreach ($codes as $value) {
@@ -45,6 +62,7 @@ class Carpet
 
         return $body;
     }
+
 
     /**
      * 값을 처리합니다.
@@ -162,5 +180,7 @@ class Carpet
         return $rows;
     }
 
-
+    /**
+     * 
+     */
 }

@@ -1,4 +1,12 @@
 <?php
+/*
+ * This file is part of the jinyPHP package.
+ *
+ * (c) hojinlee <infohojin@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace Jiny\Template\Adapter;
 
 use \Jiny\Core\Registry\Registry;
@@ -11,6 +19,9 @@ class Liquid
     private $View;
     public $Liquid;
 
+    /**
+     * 
+     */
     public function __construct($view)
     {
         // 의존성 주입
@@ -23,6 +34,7 @@ class Liquid
 
     }
 
+
     /**
      * 레이아웃 결합을 위한 기본 루트 경로를 설정합니다.
      */
@@ -32,6 +44,7 @@ class Liquid
         $path = str_replace("/", DS, $path);
         return $path;
     }
+
 
     /**
      * 인스턴스를 생성합니다.
@@ -44,12 +57,13 @@ class Liquid
         return new \Liquid\Template($path);
     }
 
+
     /**
      * Liquid 랜더링을 처리합니다.
      */
     public function Liquid($body, $data)
     {        
-        // ㅣLiquid 코드를 추출합니다.
+        // Liquid 코드를 추출합니다.
         $this->Liquid->parse($body);
 
         // 추출한 코드에 데이터를 처리합니다.

@@ -1,8 +1,8 @@
 {
     "name": "jiny/template",
-    "description": "jiny Template",
+    "description": "jinyPHP Template",
     "keywords": [
-        "jiny",
+        "jinyPHP",
         "framwork",
         "template"
     ],
