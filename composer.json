@@ -6,19 +6,20 @@
         "framwork",
         "template"
     ],
-    "homepage": "http://jiny.hojin.io",
+    "homepage": "http://www.jinyphp.com",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "hojinlee",
             "email": "infohojin@gmail.com",
-            "homepage": "http://hojin.io"
+            "homepage": "http://www.jinyphp.com"
         }
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": ">= 7.0"
+        "php": ">= 7.0",
+        "liquid/liquid": "^1.4"
     },
     "autoload": {
         "psr-4": {

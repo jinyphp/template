@@ -53,6 +53,16 @@ class Liquid
     {
         \Liquid\Liquid::set('INCLUDE_ALLOW_EXT', true);
 
+        // liquid 4.0
+        // 테그변경
+       
+        \Liquid\Liquid::$config['TAG_START'] = "{%-";
+        \Liquid\Liquid::$config['TAG_END'] = "-%}";
+
+        \Liquid\Liquid::$config['VARIABLE_START'] = "{{-";
+        \Liquid\Liquid::$config['VARIABLE_END'] = "-}}";
+       
+
         // 인스턴스를 생성합니다.
         return new \Liquid\Template($path);
     }
