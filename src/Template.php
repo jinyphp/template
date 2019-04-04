@@ -30,11 +30,6 @@ class Template Extends Engine
         // View 클래스의 인스턴스르 저장합니다.
         $this->View = Registry::get("View"); //$view;
         $this->App = Registry::get("App"); //$view->App;
-
-        // 기본 템플릿 동작
-        // 카페트
-        //$Carpet = new \Jiny\Template\Carpet\Carpet();
-        //$this->View->_body = $Carpet->parser($this->View->_body);
     }
 
     /**
@@ -53,6 +48,8 @@ class Template Extends Engine
             default:
         }
     }
+
+
 
     /**
      * 
