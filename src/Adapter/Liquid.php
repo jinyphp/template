@@ -22,7 +22,7 @@ class Liquid
     /**
      * 
      */
-    public function __construct($view)
+    public function __construct($view=null)
     {
         // 의존성 주입
         // View 클래스의 인스턴스르 저장합니다.

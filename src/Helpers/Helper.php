@@ -10,7 +10,8 @@
 // namespace Jiny\Template;
 
 if (! function_exists('liquid')) {
-    function liquid() {
-        echo "리퀴드";
-    }
+    function liquid($body, $data = []) {
+		$liquid = new \Jiny\Template\Adapter\Liquid;    
+		return $liquid->Liquid($body, $data);
+	}
 }
