@@ -13,7 +13,7 @@ use \Jiny\Core\Registry\Registry;
 
 class Engine
 {
-    private $_engine;
+    private $Engine;
 
     /**
      * 템플릿 엔진을 확인합니다.
@@ -28,7 +28,7 @@ class Engine
      */
     public function setEngine($engine)
     {
-        $this->_engine = $engine;
+        $this->Engine = $engine;
     }
 
     /**

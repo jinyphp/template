@@ -10,6 +10,7 @@
 namespace Jiny\Template;
 
 use \Jiny\Core\Registry\Registry;
+use \Jiny\Template\Adapter\Liquid;
 
 /**
  * jiny 
@@ -37,16 +38,7 @@ class Template Extends Engine
      */
     public function process($html)
     {
-        // 템플릿 엔진에 따라서 동작을 처리합니다.
-        switch ($this->isEngine()) {
-            // Liquid 템플릿 엔진처리
-            case 'Liquid':
-                $this->Processor = new \Jiny\Template\Adapter\Liquid($this->View);    
-                $html->_body = $this->Processor->Liquid($html->_body, $html->_data);
-                break;
-
-            default:
-        }
+        $html->_body = \jiny\template($this->isEngine(), $html);
     }
 
 
