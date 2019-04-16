@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
- namespace Jiny;
+namespace Jiny;
 
 use \Jiny\Template\Adapter\Liquid;
 use \Jiny\Template\Template;
